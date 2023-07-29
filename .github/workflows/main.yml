@@ -12,6 +12,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: libli/clash
+          token: ${{ secrets.PAT }}
 
       - name: Fetch and Process ChinaCompanyIp List
         run: |
