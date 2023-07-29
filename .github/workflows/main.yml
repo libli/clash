@@ -1,0 +1,32 @@
+name: Update ChinaIp and ChinaCompanyIp Lists
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Runs every day at 00:00 UTC
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          repository: libli/clash
+
+      - name: Fetch and Process ChinaCompanyIp List
+        run: |
+          wget https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list -O temp.list
+          sed 's/,no-resolve//g' temp.list > ./Ruleset/ChinaCompanyIp.list
+          rm temp.list
+
+      - name: Fetch and Process ChinaIp List
+        run: |
+          wget https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaIp.list -O temp.list
+          sed 's/,no-resolve//g' temp.list > ./Ruleset/ChinaIp.list
+          rm temp.list
+
+      - name: Commit and Push
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add ./Ruleset/ChinaCompanyIp.list ./Ruleset/ChinaIp.list
+          git commit -m "Updated ChinaCompanyIp and ChinaIp lists" -a || echo "No changes to commit"
+          git push
