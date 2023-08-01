@@ -293,8 +293,6 @@ DOMAIN-SUFFIX,cm.steampowered.com
 DOMAIN-SUFFIX,steamcontent.com
 DOMAIN-SUFFIX,steamusercontent.com
 DOMAIN-SUFFIX,steamchina.com
-DOMAIN,csgo.wmsj.cn
-DOMAIN,dota2.wmsj.cn
 DOMAIN,wmsjsteam.com
 DOMAIN,dl.steam.clngaa.com
 DOMAIN,dl.steam.ksyna.com
@@ -303,8 +301,6 @@ DOMAIN,st.dl.eccdnx.com
 DOMAIN,st.dl.pinyuncloud.com
 DOMAIN,xz.pphimalayanrt.com
 DOMAIN,steampipe.steamcontent.tnkjmec.com
-DOMAIN,steampowered.com.8686c.com
-DOMAIN,steamstatic.com.8686c.com
 
 # Vip 唯品会
 DOMAIN-SUFFIX,appsimg.com
