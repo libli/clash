@@ -1,4 +1,14 @@
 # 直连列表
+# MyList
+DOMAIN-SUFFIX,zaptiah.com
+DOMAIN-SUFFIX,libli.me
+DOMAIN-SUFFIX,woa.com
+DOMAIN-SUFFIX,oa.com
+# 小米摄像头,TUTK SDK
+DOMAIN-SUFFIX,iotcplatform.com
+IP-CIDR,122.248.234.207/32,no-resolve
+IP-CIDR,46.137.188.54/32,no-resolve
+
 # CN域名直连(中国|公司|网络)
 DOMAIN-SUFFIX,cn
 DOMAIN-SUFFIX,xn--fiqs8s
