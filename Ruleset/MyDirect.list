@@ -8,6 +8,7 @@ DOMAIN-SUFFIX,oa.com
 DOMAIN-SUFFIX,iotcplatform.com
 IP-CIDR,122.248.234.207/32,no-resolve
 IP-CIDR,46.137.188.54/32,no-resolve
+IP-CIDR,50.19.254.134/32,no-resolve
 
 # CN域名直连(中国|公司|网络)
 DOMAIN-SUFFIX,cn
