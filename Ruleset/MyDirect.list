@@ -4,6 +4,7 @@ DOMAIN-SUFFIX,zaptiah.com
 DOMAIN-SUFFIX,libli.me
 DOMAIN-SUFFIX,woa.com
 DOMAIN-SUFFIX,oa.com
+DOMAIN-SUFFIX,myexternalip.com
 # 小米摄像头,TUTK SDK
 DOMAIN-SUFFIX,iotcplatform.com
 IP-CIDR,122.248.234.207/32,no-resolve
