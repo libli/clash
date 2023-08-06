@@ -5,6 +5,8 @@ mode: rule
 log-level: info
 ipv6: false
 external-controller: 0.0.0.0:9090
+profile:
+  tracing: true
 dns:
   enable: true
   enhanced-mode: fake-ip
