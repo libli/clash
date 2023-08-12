@@ -127,4 +127,5 @@ dns:
     - "*.mcdn.bilivideo.cn"
     - "+.media.dssott.com"
     - "+.pvp.net"
+    - "+.github.com"
     # === +.foo.com 等于 .foo.com 和 foo.com ===
