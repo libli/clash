@@ -1034,6 +1034,80 @@ IP-CIDR,144.178.48.0/20,no-resolve
 IP-CIDR,192.35.50.0/24,no-resolve
 IP-CIDR,198.183.17.0/24,no-resolve
 IP-CIDR,205.180.175.0/24,no-resolve
+# 本地/局域网地址
+# 参考：https://en.wikipedia.org/wiki/Reserved_IP_addresses
+
+# ACL4SSR标志 如没有，代表不是用ACL4SSR规则
+DOMAIN-SUFFIX,acl4.ssr
+
+# 本地/局域网地址
+DOMAIN-SUFFIX,ip6-localhost
+DOMAIN-SUFFIX,ip6-loopback
+DOMAIN-SUFFIX,lan
+DOMAIN-SUFFIX,local
+DOMAIN-SUFFIX,localhost
+IP-CIDR,0.0.0.0/8,no-resolve
+IP-CIDR,10.0.0.0/8,no-resolve
+IP-CIDR,100.64.0.0/10,no-resolve
+IP-CIDR,127.0.0.0/8,no-resolve
+IP-CIDR,172.16.0.0/12,no-resolve
+IP-CIDR,192.168.0.0/16,no-resolve
+IP-CIDR,198.18.0.0/16,no-resolve
+IP-CIDR,224.0.0.0/4,no-resolve
+IP-CIDR6,::1/128,no-resolve
+IP-CIDR6,fc00::/7,no-resolve
+IP-CIDR6,fe80::/10,no-resolve
+IP-CIDR6,fd00::/8,no-resolve
+
+# Router managed 路由器管理域名
+DOMAIN,instant.arubanetworks.com
+DOMAIN,setmeup.arubanetworks.com
+DOMAIN,router.asus.com
+DOMAIN,www.asusrouter.com
+DOMAIN-SUFFIX,hiwifi.com
+DOMAIN-SUFFIX,leike.cc
+DOMAIN-SUFFIX,miwifi.com
+DOMAIN-SUFFIX,my.router
+DOMAIN-SUFFIX,p.to
+DOMAIN-SUFFIX,peiluyou.com
+DOMAIN-SUFFIX,phicomm.me
+DOMAIN-SUFFIX,router.ctc
+DOMAIN-SUFFIX,routerlogin.com
+DOMAIN-SUFFIX,tendawifi.com
+DOMAIN-SUFFIX,zte.home
+DOMAIN-SUFFIX,tplogin.cn
+DOMAIN-SUFFIX,wifi.cmcc
+# Apple
+# 一般国内Apple肯定正常,不需要开代理
+DOMAIN,apple.comscoreresearch.com
+DOMAIN-SUFFIX,aaplimg.com
+DOMAIN-SUFFIX,akadns.net
+DOMAIN-SUFFIX,apple-cloudkit.com
+DOMAIN-SUFFIX,apple-dns.net
+DOMAIN-SUFFIX,apple-mapkit.com
+DOMAIN-SUFFIX,apple.co
+DOMAIN-SUFFIX,apple.com
+DOMAIN-SUFFIX,apple.com.cn
+DOMAIN-SUFFIX,apple.news
+DOMAIN-SUFFIX,appstore.com
+DOMAIN-SUFFIX,cdn-apple.com
+DOMAIN-SUFFIX,crashlytics.com
+DOMAIN-SUFFIX,icloud-content.com
+DOMAIN-SUFFIX,icloud.com
+DOMAIN-SUFFIX,icloud.com.cn
+DOMAIN-SUFFIX,itunes.com
+DOMAIN-SUFFIX,me.com
+DOMAIN-SUFFIX,mzstatic.com
+IP-CIDR,17.0.0.0/8,no-resolve
+IP-CIDR,63.92.224.0/19,no-resolve
+IP-CIDR,65.199.22.0/23,no-resolve
+IP-CIDR,139.178.128.0/18,no-resolve
+IP-CIDR,144.178.0.0/19,no-resolve
+IP-CIDR,144.178.36.0/22,no-resolve
+IP-CIDR,144.178.48.0/20,no-resolve
+IP-CIDR,192.35.50.0/24,no-resolve
+IP-CIDR,198.183.17.0/24,no-resolve
+IP-CIDR,205.180.175.0/24,no-resolve
 # 直连列表
 # MyList
 DOMAIN-SUFFIX,zaptiah.com
