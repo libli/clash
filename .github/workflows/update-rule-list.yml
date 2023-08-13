@@ -88,5 +88,5 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add Merge/* # 添加 Merge 目录下所有变动的文件
-          git commit -m "Update and Merge files in Merge directory"
+          git commit -m "Update and Merge files in Merge directory" || echo "No changes to commit"
           git push
