@@ -14,6 +14,9 @@ jobs:
           ref: main
           token: ${{ secrets.PAT }}
 
+      - name: Fetch all branches
+        run: |
+          git fetch --all
       - name: Checkout master branch
         run: |
           git checkout master
