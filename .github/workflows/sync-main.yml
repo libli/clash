@@ -1,0 +1,34 @@
+name: Sync main branch workflow to master branch
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sync-file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Configure Git user
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "action@github.com"
+
+      - name: Checkout master branch
+        run: |
+          git checkout master
+
+      - name: Copy file from main branch
+        run: |
+          git checkout main -- .github/workflows/update-rule-list.yml
+
+      - name: Commit and push changes to master
+        run: |
+          git add .github/workflows/update-rule-list.yml
+          git commit -m "Sync update-rule-list.yml from main branch"
+          git push
