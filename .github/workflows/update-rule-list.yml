@@ -1,0 +1,30 @@
+name: Update Rule Lists
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Runs every day at 00:00 UTC
+  workflow_dispatch:  # Allows manual trigger
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          repository: libli/clash
+          token: ${{ secrets.PAT }}
+      - name: Fetch Direct Content from URLs
+        run: |
+          curl -s https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list > LocalAreaNetwork.list
+          curl -s https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list > Apple.list
+      - name: Merge Files and Replace MyDirect.list
+        run: |
+          cat LocalAreaNetwork.list Apple.list Ruleset/MyDirect.list > temp.list
+          mv temp.list Ruleset/MyDirect.list
+          rm LocalAreaNetwork.list Apple.list
+      - name: Commit and Push
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add Ruleset/MyDirect.list
+          git commit -m "Update and Merge MyDirect.list"
+          git push
