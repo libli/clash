@@ -42,6 +42,15 @@ jobs:
           for file in YouTube.list YouTubeMusic.list Google.list; do cat $file; echo ""; done > Merge/Youtube.list
           rm YouTube.list YouTubeMusic.list Google.list
 
+      - name: Fetch Content for Netflix
+        run: |
+          curl -s https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Netflix.list > Netflix.list
+          curl -s https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/NetflixIP.list > NetflixIP.list
+      - name: Merge Netflix Files and Replace Netflix.list
+        run: |
+          for file in Netflix.list NetflixIP.list; do cat $file; echo ""; done > Merge/Netflix.list
+          rm Netflix.list NetflixIP.list
+
       - name: Fetch Content for DisneyPlus
         run: |
           curl -s https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/DisneyPlus.list > DisneyPlus.list
