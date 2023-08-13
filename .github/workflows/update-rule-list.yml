@@ -13,6 +13,10 @@ jobs:
         with:
           ref: main
           token: ${{ secrets.PAT }}
+
+      - name: Copy MyProxy.list
+        run: cp Ruleset/MyProxy.list Merge/Proxy.list
+
       - name: Fetch Direct Content from URLs
         run: |
           curl -s https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list > LocalAreaNetwork.list
@@ -80,7 +84,7 @@ jobs:
           curl -s https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Pornhub.list > Pornhub.list
       - name: Merge GFW List Files and Replace GFW.list
         run: |
-          for file in Porn.list Pornhub.list Ruleset/MyGFW.list; do cat $file; echo ""; done > Merge/GFW.list
+          for file in Porn.list Pornhub.list; do cat $file; echo ""; done > Merge/GFW.list
           rm Porn.list Pornhub.list
 
       - name: Commit and Push
