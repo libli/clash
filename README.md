@@ -36,3 +36,14 @@ https://github.com/alecthw/mmdb_china_ip_list/releases/download/202307310307/Cou
 
 ## OpenClash
 openclash 会自动把 rule-providers 中的 http 规则下载，放在/etc/openclash/rule_provider目录下
+
+## 最终逻辑
+自定义需要直连的网站，写在 Ruleset/MyDirect.list 中
+
+其它第三方规则，定时运行 Github action，合并到 Merge 文件夹下。
+
+自己编译的 subconverter Docker中，每天定时拉取本仓库，把 Merge 文件夹复制到 rules/myclash/Merge 文件夹下面
+
+ytoo-local.ini 复制到 config/ytoo-local.ini，在 subconverter 的 url 中，&config=config/ytoo-local.ini 即可使用。
+
+ytoo-local.ini 会使用 clash_rule_base=base/MyClashConfig.yml，也是从本仓库复制到 base 文件夹下。

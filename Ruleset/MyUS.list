@@ -1,0 +1,7 @@
+# 强制使用 US 节点的列表
+DOMAIN-SUFFIX,api.mixpanel.com
+DOMAIN-SUFFIX,api.statsig.com
+DOMAIN-SUFFIX,api.revenuecat.com
+DOMAIN-SUFFIX,claude.ai
+DOMAIN-SUFFIX,anthropic.com
+DOMAIN-SUFFIX,bard.google.com
