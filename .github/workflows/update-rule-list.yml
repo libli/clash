@@ -1,7 +1,7 @@
 name: Update Rule Lists
 on:
   schedule:
-    - cron: '16 3 * * *'
+    - cron: '0 16 * * *' # +8 时区，每天 0:00 更新
   workflow_dispatch: # 允许手动触发
 
 jobs:
@@ -21,6 +21,59 @@ jobs:
         run: |
           cat LocalAreaNetwork.list Apple.list Ruleset/MyDirect.list > Merge/Direct.list
           rm LocalAreaNetwork.list Apple.list
+
+      - name: Fetch US Content from URLs
+        run: |
+          curl -s https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/OpenAi.list > OpenAi.list
+          curl -s https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Microsoft.list > Microsoft.list
+          curl -s https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/PayPal/PayPal.list > PayPal.list
+      - name: Merge Files and Replace US.list
+        run: |
+          cat OpenAi.list Microsoft.list PayPal.list > Merge/US.list
+          rm OpenAi.list Microsoft.list PayPal.list
+
+      - name: Fetch Content for YouTube
+        run: |
+          curl -s https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/YouTube.list > YouTube.list
+          curl -s https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/YouTubeMusic.list > YouTubeMusic.list
+          curl -s https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Google.list > Google.list
+      - name: Merge YouTube, YouTubeMusic, and Google Files and Replace Youtube.list
+        run: |
+          cat YouTube.list YouTubeMusic.list Google.list > Merge/Youtube.list
+          rm YouTube.list YouTubeMusic.list Google.list
+
+      - name: Fetch Content for DisneyPlus
+        run: |
+          curl -s https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/DisneyPlus.list > DisneyPlus.list
+      - name: Merge DisneyPlus Files and Replace Disney.list
+        run: |
+          cat DisneyPlus.list > Merge/Disney.list
+          rm DisneyPlus.list
+
+      - name: Fetch Content for Important List
+        run: |
+          curl -s https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Facebook.list > Facebook.list
+          curl -s https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list > Telegram.list
+          curl -s https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Discord.list > Discord.list
+          curl -s https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Github.list > Github.list
+          curl -s https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Instagram.list > Instagram.list
+          curl -s https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Twitter.list > Twitter.list
+          curl -s https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Wikipedia.list > Wikipedia.list
+          curl -s https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Dropbox/Dropbox.list > Dropbox.list
+      - name: Merge Important List Files and Replace Important.list
+        run: |
+          cat Facebook.list Telegram.list Discord.list Github.list Instagram.list Twitter.list Wikipedia.list Dropbox.list > Merge/Important.list
+          rm Facebook.list Telegram.list Discord.list Github.list Instagram.list Twitter.list Wikipedia.list Dropbox.list
+
+      - name: Fetch Content for GFW List
+        run: |
+          curl -s https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Porn.list > Porn.list
+          curl -s https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Pornhub.list > Pornhub.list
+      - name: Merge GFW List Files and Replace GFW.list
+        run: |
+          cat Porn.list Pornhub.list > Merge/GFW.list
+          rm Porn.list Pornhub.list
+
       - name: Commit and Push
         run: |
           git config --local user.email "action@github.com"
