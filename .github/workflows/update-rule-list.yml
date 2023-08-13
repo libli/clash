@@ -1,0 +1,30 @@
+name: Update Rule Lists
+on:
+  schedule:
+    - cron: '16 3 * * *'
+  workflow_dispatch: # 允许手动触发
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: main
+          token: ${{ secrets.PAT }}
+      - name: Fetch Direct Content from URLs
+        run: |
+          curl -s https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list > LocalAreaNetwork.list
+          curl -s https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list > Apple.list
+      - name: Merge Files and Replace Direct.list
+        run: |
+          cat LocalAreaNetwork.list Apple.list Ruleset/MyDirect.list > Merge/Direct.list
+          rm LocalAreaNetwork.list Apple.list
+      - name: Commit and Push
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add Merge/* # 添加 Merge 目录下所有变动的文件
+          git commit -m "Update and Merge files in Merge directory"
+          git push
