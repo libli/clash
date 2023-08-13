@@ -11,9 +11,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          ref: master
-          fetch-depth: 0
+          ref: main
           token: ${{ secrets.PAT }}
+
+      - name: Checkout master branch
+        run: |
+          git checkout master
 
       - name: Copy file from main branch
         run: |
