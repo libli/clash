@@ -2,8 +2,6 @@ name: Update Rule Lists
 on:
   schedule:
     - cron: '0 * * * *'  # Runs every day at 00:00 UTC
-  push:
-    branches: [ "main" ]
 jobs:
   update:
     runs-on: ubuntu-latest
