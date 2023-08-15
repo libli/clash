@@ -32,6 +32,9 @@ https://github.com/alecthw/mmdb_china_ip_list
 release 地址：
 https://github.com/alecthw/mmdb_china_ip_list/releases/download/202307310307/Country-lite.mmdb
 
+使用这个固定url:
+https://raw.githubusercontent.com/alecthw/mmdb_china_ip_list/release/lite/Country.mmdb
+
 使用Lite版本即可，china_ip_list是ipip.net的数据： https://github.com/17mon/china_ip_list
 
 ## OpenClash
