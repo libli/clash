@@ -7,7 +7,6 @@ on:
     paths:
       - 'ytoo-local.ini'
 
-
 jobs:
   update-file:
     runs-on: ubuntu-latest
