@@ -17,20 +17,7 @@ jobs:
         with:
           token: ${{ secrets.PAT }}
 
-      - name: Check for file changes
-        id: file-check
-        run: |
-          git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep ytoo-local.ini
-          if [ $? -eq 0 ]; then
-            echo "ytoo-local.ini was changed"
-            echo "::set-output name=changed::true"
-          else
-            echo "::set-output name=changed::false"
-          fi
-        shell: bash
-
       - name: Update ytoo-surge.ini
-        if: steps.file-check.outputs.changed == 'true'
         run: |
           cat ytoo-local.ini | sed 's/\[]DST-PORT/\[]DEST-PORT/g' > ytoo-surge.ini
           git config --local user.email "action@github.com"
