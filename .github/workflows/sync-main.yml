@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - '.github/workflows/update-rule-list.yml'
 
 jobs:
   sync-file:
