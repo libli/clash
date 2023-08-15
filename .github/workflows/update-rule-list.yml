@@ -4,7 +4,6 @@ on:
     - cron: '0 16 * * *' # +8 时区，每天 0:00 更新
   workflow_dispatch: # 允许手动触发
 
-
 jobs:
   update:
     runs-on: ubuntu-latest
