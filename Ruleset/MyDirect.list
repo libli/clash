@@ -1,7 +1,5 @@
 # 直连列表
 # MyList
-DEST-PORT,22
-DEST-PORT,36000
 DOMAIN-SUFFIX,zaptiah.com
 DOMAIN-SUFFIX,libli.me
 DOMAIN-SUFFIX,woa.com
