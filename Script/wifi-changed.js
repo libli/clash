@@ -1,6 +1,8 @@
 const WIFI_DONT_NEED_PROXYS = ['Tencent-WiFi', 'Tencent-GuestWiFi'];
 const CURRENT_WIFI_SSID_KEY = 'current_wifi_ssid';
 
+$notification.post('DNS Update', $network.dns.join(', '));
+
 if (wifiChanged()) {
     const mode = WIFI_DONT_NEED_PROXYS.includes($network.wifi.ssid)
         ? 'direct'
