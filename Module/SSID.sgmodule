@@ -2,5 +2,4 @@
 #!desc = 公司网络也允许代理
 
 [SSID Setting]
-  "NETGEAR28_5G" suspend=true
-  "Tencent-WiFi" suspend=false
+  "Tencent-WiFi"
