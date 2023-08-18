@@ -7,6 +7,6 @@
   hijack-dns = 8.8.8.8:53
   geoip-maxmind-url = https://raw.githubusercontent.com/alecthw/mmdb_china_ip_list/release/lite/Country.mmdb
   hide-vpn-icon=true  
-  [SSID Setting]
+[SSID Setting]
   "Tencent-WiFi" suspend=true
   "NETGEAR28_5G" suspend=true
