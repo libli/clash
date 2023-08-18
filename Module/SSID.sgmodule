@@ -2,4 +2,4 @@
 #!desc = 公司网络也允许代理
 
 [SSID Setting]
-  "Tencent-WiFi"
+  "Tencent-WiFi" suspend=false
