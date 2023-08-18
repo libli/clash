@@ -3,3 +3,4 @@
 
 [SSID Setting]
   "NETGEAR28_5G" suspend=true
+  "Tencent-WiFi" suspend=false
