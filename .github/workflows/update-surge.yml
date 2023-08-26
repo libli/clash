@@ -6,7 +6,6 @@ on:
       - main
     paths:
       - 'ytoo-local.ini'
-  workflow_dispatch: # 允许手动触发
 
 jobs:
   update-file:
