@@ -27,16 +27,6 @@ dns:
     - "*.local"
     - "*.home.arpa"
 
-    # === Microsoft Services ===
-    - "+.msftconnecttest.com"
-    - "+.msftncsi.com"
-    - "msftconnecttest.com"
-    - "msftncsi.com"
-    - "xbox.*.microsoft.com"
-    - "+.xboxlive.com"
-    - "xnotify.xboxlive.com"
-    - "+.ipv6.microsoft.com"
-
     # === NTP Service ===
     - "time.*.com"
     - "time.*.gov"
@@ -61,6 +51,15 @@ dns:
     - "*.ntp.org.cn"
     - "+.pool.ntp.org"
     - "time1.cloud.tencent.com"
+
+    # === Stun Services ===
+    - "+.stun.playstation.net"
+    - "stun.*.*"
+    - "stun.*.*.*"
+    - "+.stun.*.*"
+    - "+.stun.*.*.*"
+    - "+.stun.*.*.*.*"
+    - "stun.l.google.com"
 
     # === Music Service ===
     - "+.music.163.com"
@@ -88,20 +87,12 @@ dns:
     - "+.music.migu.cn"
     - "music.migu.cn"
 
-    # === Stun Services ===
-    - "+.stun.playstation.net"
-    - "stun.*.*"
-    - "stun.*.*.*"
-    - "+.stun.*.*"
-    - "+.stun.*.*.*"
-    - "+.stun.*.*.*.*"
-    - "stun.l.google.com"
-
-    # === Other Services ===
-    - "localhost.ptlogin2.qq.com"
-    - "localhost.sec.qq.com"
+    # === website ===
+    - "+.msftconnecttest.com"
+    - "+.msftncsi.com"
+    - "+.microsoft.com"
+    - "+.xboxlive.com"
     - "+.srv.nintendo.net"
-    - "*.battlenet.com.cn"
     - "+.battlenet.com.cn"
     - "+.wotgame.cn"
     - "+.wggames.cn"
@@ -112,12 +103,7 @@ dns:
     - "*.linksys.com"
     - "*.linksyssmartwifi.com"
     - "*.router.asus.com"
-    - "swscan.apple.com"
-    - "mesu.apple.com"
-    - "swquery.apple.com"
-    - "swdownload.apple.com"
-    - "swcdn.apple.com"
-    - "swdist.apple.com"
+    - "+.apple.com"
     - "lens.l.google.com"
     - "*.square-enix.com"
     - "*.finalfantasyxiv.com"
@@ -129,4 +115,6 @@ dns:
     - "+.pvp.net"
     - "+.qq.com"
     - "+.tencent.com"
+    - "+.baidu.com"
+    - "+.taobao.com"
     # === +.foo.com 等于 .foo.com 和 foo.com 和 a.b.foo.com ===
