@@ -127,4 +127,6 @@ dns:
     - "*.mcdn.bilivideo.cn"
     - "+.media.dssott.com"
     - "+.pvp.net"
-    # === +.foo.com 等于 .foo.com 和 foo.com ===
+    - "+.qq.com"
+    - "+.tencent.com"
+    # === +.foo.com 等于 .foo.com 和 foo.com 和 a.b.foo.com ===
