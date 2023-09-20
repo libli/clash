@@ -1,0 +1,5 @@
+#!name = SSID-Home
+#!desc = 家里网络不代理
+
+[SSID Setting]
+  "NETGEAR28_5G" suspend=true

@@ -1,0 +1,5 @@
+#!name = SSID-TX
+#!desc = 公司网络不代理
+
+[SSID Setting]
+  "Tencent-WiFi" suspend=true
