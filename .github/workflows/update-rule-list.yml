@@ -34,14 +34,14 @@ jobs:
           for file in PayPal.list; do cat $file; echo ""; done > Merge/PayPal.list
           rm PayPal.list
 
-      - name: Fetch US Content from URLs
+      - name: Fetch AI Content from URLs
         run: |
           curl -s https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/OpenAi.list > OpenAi.list
           curl -s https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Microsoft.list > Microsoft.list
-      - name: Merge Files and Replace US.list
+      - name: Merge Files and Replace AI.list
         run: |
-          for file in OpenAi.list Microsoft.list Ruleset/MyUS.list; do cat $file; echo ""; done > Merge/US.list
-          rm OpenAi.list Microsoft.list PayPal.list
+          for file in OpenAi.list Microsoft.list Ruleset/MyUS.list; do cat $file; echo ""; done > Merge/AI.list
+          rm OpenAi.list Microsoft.list
 
       - name: Fetch Content for YouTube
         run: |
