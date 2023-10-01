@@ -40,7 +40,7 @@ jobs:
           curl -s https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Microsoft.list > Microsoft.list
       - name: Merge Files and Replace US.list
         run: |
-          for file in OpenAi.list Microsoft.list PayPal.list Ruleset/MyUS.list; do cat $file; echo ""; done > Merge/US.list
+          for file in OpenAi.list Microsoft.list Ruleset/MyUS.list; do cat $file; echo ""; done > Merge/US.list
           rm OpenAi.list Microsoft.list PayPal.list
 
       - name: Fetch Content for YouTube
