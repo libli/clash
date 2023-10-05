@@ -50,3 +50,10 @@ openclash 会自动把 rule-providers 中的 http 规则下载，放在/etc/open
 ytoo-local.ini 复制到 config/ytoo-local.ini，在 subconverter 的 url 中，&config=config/ytoo-local.ini 即可使用。
 
 ytoo-local.ini 会使用 clash_rule_base=base/MyClashConfig.yml，也是从本仓库复制到 base 文件夹下。
+
+## 生成自己 VPS 的订阅链接
+1. 通过 v2raya 的 share 生成类似 vmess://xxxxxx 的链接，有多个节点直接在记事本中换行输入多个。
+2. 在 https://www.base64encode.org/ 把所有内容编码为 base64
+3. 保存在 gist 中，使用 RAW 获取链接，并删除第二段 hash 值。这样每次提交时，链接不会变化。
+4. 把 gist 的链接前面加上 | ，如|https://gist.githubusercontent.com/xxx 然后再进行 urlencode，https://www.urlencoder.org/
+5. 把 urlencode 后的链接，放在 subconverter 的 url 中。
