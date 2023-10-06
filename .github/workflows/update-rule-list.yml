@@ -70,6 +70,14 @@ jobs:
           for file in DisneyPlus.list; do cat $file; echo ""; done > Merge/Disney.list
           rm DisneyPlus.list
 
+      - name: Fetch Content for MyTVSuper
+        run: |
+          curl -s https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/MyTVSuper.list > MyTVSuper.list
+      - name: Merge MyTVSuper Files and Replace MyTVSuper.list
+        run: |
+          for file in MyTVSuper.list; do cat $file; echo ""; done > Merge/MyTVSuper.list
+          rm MyTVSuper.list
+
       - name: Fetch Content for Important List
         run: |
           curl -s https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Facebook.list > Facebook.list
