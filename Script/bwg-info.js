@@ -24,8 +24,8 @@ $httpClient.get(requestUrl, function(error, response, data){
         `Plan: ${plan}`,
         `IDC: ${nodeDatacenter}`,
         `OS: ${os}`,
-        `RAM: ${planRam}`,
-        `Disk: ${planDisk}`
+        `Disk: ${planDisk}`,
+        `RAM: ${planRam}`
     ];
 
     let now = new Date();
