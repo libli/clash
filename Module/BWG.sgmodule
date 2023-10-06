@@ -7,4 +7,4 @@
 bwg-info = script-name=bwg-info,title="Bandwagon VPS Info",content="请刷新面板",update-interval=3600
 
 [Script]
-bwg-info = script-path=https://raw.githubusercontent.com/libli/clash/main/Script/bwg-info.js,type=generic,argument=xxxxxx
+bwg-info = script-path=https://raw.githubusercontent.com/libli/clash/main/Script/bwg-info.js,type=generic,argument=veid=0000000&api_key=YOUR_API_KEY_HERE
